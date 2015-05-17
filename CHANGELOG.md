@@ -1,10 +1,11 @@
 Yii Framework 2 Change Log
 ==========================
 
-2.0.4 under development
------------------------
+2.0.4 May 10, 2015
+------------------
 
 - Bug #5042: Use RETURNING for inserts for pgsql and oci to support PKs with a custom default value expression (nineinchnick, klimov-paul)
+- Bug #6234: Fixed wrong table schema information for MSSQL when using multiple schemas (nineinchnick)
 - Bug #6642: Fixed the bug that using confirmation dialog via `data-confirm` in an `ActiveForm` may cause the dialog to appear twice (pana1990, qiangxue)
 - Bug #6871: Fixed the bug that using defaults and hostnames in URL rules may cause an out-of-range index issue (qiangxue)
 - Bug #7036: Fixed `yii\helpers\Html::dropDownList()` overrides label specified at 'groups' option (aktec, klimov-paul)
@@ -37,7 +38,10 @@ Yii Framework 2 Change Log
 - Bug #8158: Avoid exception when detecting console screen size fails on windows (EliasZ)
 - Bug #8165: Fixed `yii\db\ActiveRelationTrait::populateRelation()` fails when `link` refers to string convertable object attribute, like `\MongoId` (klimov-paul)
 - Bug #8231: Configuration of GridView and DetailView where not preserved when used multiple times (cebe, idMolotov)
+- Bug #8273: Fixed `yii\widgets\FragmentCache` when `enabled` is false (nkovacs)
+- Bug #8291: Fixed numeric keys in $_GET transformed to 0-based, if 'pretty URL' enabled (quantum13, klimov-paul)
 - Bug #5053: DateValidator is now more robust against different timezone settings (cebe)
+- Bug (CVE-2015-3397): Added `Json::htmlEncode()` to support safer JSON data encoding in HTML code (samdark, Tomasz Tokarski)
 - Enh #1468: Added ability to specify hints for model attributes via `attributeHints()` method (klimov-paul)
 - Enh #3376: Added `yii\validators\EachValidator`, which allows validation of the array attributes (klimov-paul)
 - Enh #5053: Added possibility to specify a format and time zone for the `timestampAttribute` of date validator making it fully usable for validating complete timestamps (cebe)
@@ -69,6 +73,8 @@ Yii Framework 2 Change Log
 - Enh #8078: 'links' and 'meta' envelope names are now configurable at `yii\rest\Serializer` (arturf)
 - Enh #8171: Allow the user to enforce the fileSize to allow sending files which are not seekable. Needed when using S3 Stream Wrapper (pgaultier)
 - Enh #8179: Added parameter to define whether the comparison of `yii\db\BaseActiveRecord::isAttributeChanged()` method will be made as identical (thiagotalma)
+- Enh #8194: Caching of the matched rules added to `yii\web\UrlManager::createUrl()` (laszlovl, klimov-paul)
+- Enh #8268: Allow `QueryBuilder` to recognize more variations of `limit` and `offset` values (tino415, qiangxue)
 - Enh: `yii\i18n\Formatter` now shows more information about errors which occured when formatting values (cebe)
 - Enh: Added `yii\helper\Console::wrapText()` method to wrap indented text by console window width and used it in `yii help` command (cebe)
 - Enh: Implement batchInsert for oci (nineinchnick)

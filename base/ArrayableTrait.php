@@ -117,7 +117,7 @@ trait ArrayableTrait
     {
         $data = [];
         foreach ($this->resolveFields($fields, $expand) as $field => $definition) {
-            $data[$field] = is_string($definition) || is_int($definition) ? $this->$definition : call_user_func($definition, $this, $field);
+            $data[$field] = is_string($definition) ? $this->$definition : call_user_func($definition, $this, $field);
         }
 
         if ($this instanceof Linkable) {
