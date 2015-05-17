@@ -54,7 +54,7 @@
     "require": {
         "php": ">=5.4.0",
         "ext-mbstring": "*",
-        "lib-pcre": "*",
+        "lib-pcre": "*"
     },
     "autoload": {
         "psr-4": {"yii\\": ""}
